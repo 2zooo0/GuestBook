@@ -20,10 +20,10 @@
         <aside id="newGuest">
             <h2 class="title2">방명록 작성하기</h2>
             <div id="newG">
-                <input type="text" id="title" placeholder="제목을 입력하세요."/>
-                <input type="text" id="writer" placeholder="이름을 입력하세요."/>
-                <input type="text" id="content" placeholder="내용을 입력하세요."/>
-                <input type="text" id="password" placeholder="비밀번호 설정하기"/>
+                <input type="text" id="title" placeholder="제목을 입력하세요." required/>
+                <input type="text" id="writer" placeholder="이름을 입력하세요." required/>
+                <input type="text" id="content" placeholder="내용을 입력하세요." required/>
+                <input type="text" id="password" placeholder="비밀번호 설정하기" required/>
                 <button type="submit" id="submitbtn">🚀발자국 남기기🚀</button>
             </div>
 
@@ -35,5 +35,6 @@
 
     </div>
     <script src="./index.js"></script>
+    <script>window.onload = function() {getData();};</script>
 </body>
 </html>
