@@ -13,7 +13,7 @@ async function getData() {
     const fetchData = await fetch(baseURL);
     //console.log(fetchData);
     const toJson = await fetchData.json();
-    //console.log(toJson);
+    console.log(toJson);
     //지금까지 패치데이터를 toJson에 담았음.
     
     
@@ -33,7 +33,7 @@ async function getData() {
         //list를 div박스를 만들어 innerHtml을 통해 내부에 데이터 내용 가져오기
         //delBtn클릭시 delData함수 호출
         const delBtn = document.querySelector("delBtn");
-        delBtn.addEventListener("click",delData);
+        delBtn.addEventListener("click",delData());
 
     })
 
