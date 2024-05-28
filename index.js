@@ -10,11 +10,12 @@ const newG = document.getElementById('newG');
 //방명록 리스트 조회(시간순 정렬)
 async function getData() {
     //const url= `${baseURL}/`;
-    const fetchData = fetch(baseURL);
+    const fetchData = await fetch(baseURL);
     //console.log(fetchData);
-    const toJson = await fetchData.json;
+    const toJson = await fetchData.json();
     //console.log(toJson);
     //지금까지 패치데이터를 toJson에 담았음.
+    
     
 
     //불러온 기록 정렬하기(GuestListdksdp Glist박스들 쌓이게, 한 기록이 한 GList)
