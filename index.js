@@ -41,6 +41,7 @@ async function getData() {
 
 
 //방명록 생성(작성)
+
 function newData() {
     //input안에 입력된 변수들의 값 저장
     const submitBtn = document.querySelector("#submitBtn");
