@@ -11,10 +11,11 @@ const newG = document.getElementById('newG');
 async function getData() {
     //const url= `${baseURL}/`;
     const fetchData = await fetch(baseURL);
-    //console.log(fetchData);
     const toJson = await fetchData.json();
     //console.log(toJson);
-    //지금까지 패치데이터를 toJson에 담았음.
+    //지금까지 패치데이터를 toJson에 담았음.->정렬필요
+    //toJson.sort((a,b)=>
+       // new Date(a.created_at) - new Date(b.created_at));
     
     
 
@@ -29,18 +30,27 @@ async function getData() {
             <p>${data.writer} <p style="color:gray">${data.created_at}</p> </p>
             <input type="password" placeholder="비밀번호 입력">
             <button type="button" id="delBtn">삭제하기</button>
-        `
+        `;
         //list를 div박스를 만들어 innerHtml을 통해 내부에 데이터 내용 가져오기
         //delBtn클릭시 delData함수 호출
-        const delBtn = document.querySelector("delBtn");
-        delBtn.addEventListener("click",delData);
+
+        //const delBtn = document.getElementById("delBtn");
+        //delBtn.addEventListener("click",delData());
+
+        window.onload = function() {
+            const delBtn = document.querySelector("delBtn");
+            delBtn.addEventListener("click", delData);
+        };
+
+        list.appendChild(GList); //위에서 만든 list를 Glist에 넣기
 
     })
-
+   
 }
 
 
 //방명록 생성(작성)
+
 function newData() {
     //input안에 입력된 변수들의 값 저장
     const submitBtn = document.querySelector("#submitBtn");
@@ -52,7 +62,8 @@ function newData() {
 
     //입력받은 값들을 post해주기
     //입력되지 않은 칸이 있다면 경고창 띄워주기->html에서 required로 대체
-    submitBtn.onclick = () => {
+    //submitBtn.onclick = () => {
+    function newPost(){
         fetch(baseURL, {
             method:"POST",
             headers : {
@@ -73,8 +84,9 @@ function newData() {
         })
     }
 
-    //입력칸 비워주기?는 보고
 
+
+    //입력칸 비워주기?는 보고
 
 }
 
@@ -103,3 +115,6 @@ function delData() {
 
 
 }
+
+
+//H1,H2 클릭시 새로고침
