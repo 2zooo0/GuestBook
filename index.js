@@ -13,12 +13,11 @@ async function getData() {
     const fetchData = await fetch(baseURL);
     const toJson = await fetchData.json();
     //console.log(toJson);
+    
     //지금까지 패치데이터를 toJson에 담았음.->정렬필요
     //toJson.sort((a,b)=>
-       // new Date(a.created_at) - new Date(b.created_at));
+       //new Date(a.created_at) - new Date(b.created_at));
     
-    
-
     //불러온 기록 정렬하기(GuestListdksdp Glist박스들 쌓이게, 한 기록이 한 GList)
     toJson.map((data)=> {
         const list = document.createElement('div');
@@ -43,7 +42,7 @@ async function getData() {
         };
 
         list.appendChild(GList); //위에서 만든 list를 Glist에 넣기
-
+        GuestList.appendChild(GList);
     })
    
 }
